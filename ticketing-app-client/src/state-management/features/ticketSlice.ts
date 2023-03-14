@@ -45,8 +45,6 @@ export const store = createAsyncThunk('tickets/store', async (values: any, { rej
     }  
 })
 
-
-
 export const update = createAsyncThunk('tickets/update', async (values: any, { rejectWithValue } ) => {  
     try { 
       const storeResponse = await axios.patch(`/tickets/${values.id}`, values);
@@ -55,16 +53,12 @@ export const update = createAsyncThunk('tickets/update', async (values: any, { r
       return rejectWithValue(err.response.data) 
     }     
 })
+
 export const destroy = createAsyncThunk('tickets/destroy', async (id: any ) => {  
   await axios.delete(`/tickets/${id}`);
   return id;     
 })
   
-
-// export const deleteExistingTicket = createAsyncThunk('tickets/deleteExistingTicket', async (id: string) => {
-//   await ticketService.deleteTicket(id);
-//   return id;
-// });
 
 const ticketsSlice = createSlice({
   name: 'tickets',
@@ -86,11 +80,8 @@ const ticketsSlice = createSlice({
         state.status = "pending";
       })
       .addCase(store.fulfilled, (state, action) => {
-        if(action.payload.hasOwnProperty('success') && action.payload.success === true  ){
-            state.status = 'idle'; 
-          }else {
-            state.status = 'failed';
-        }
+          state.status = "succeeded";
+          state.tickets = action.payload;
       })
         .addCase(store.rejected, (state) => {
         state.status = "failed";
