@@ -21,7 +21,7 @@
     "seed": "ts-node ./src/seeds/create-default-admin-user.seed.ts"
   },
   "dependencies": {
-    "@nestjs/common": "^9.0.0",
+    "@nestjs/common": "^9.3.9",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/jwt": "^10.0.2",

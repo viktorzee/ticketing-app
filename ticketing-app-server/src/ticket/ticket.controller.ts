@@ -33,8 +33,8 @@ export class TicketsController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.ticketsService.remove(id);
+  destroy(@Param('id') id: string) {
+    return this.ticketsService.destroy(id);
   }
 
 }

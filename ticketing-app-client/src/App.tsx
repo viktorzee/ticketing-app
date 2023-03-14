@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { lazy, Suspense } from "react";
+import { Spinner } from "react-bootstrap";
+import { BrowserRouter as Router, Routes, Route  } from "react-router-dom";
+import Header from "./components/Header";
 
-function App() {
+const Home = lazy(() => import('./pages/Home'));
+const TicketHome = lazy(() => import('./pages/TicketPage'));
+
+export default function App() {
+
+  axios.defaults.baseURL = 'http://localhost:8080';
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Suspense fallback={ <Spinner /> }>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/tickets" element={<TicketHome />} />
+        </Routes>
+      </Suspense>
+    </Router>
+  )
 }
-
-export default App;

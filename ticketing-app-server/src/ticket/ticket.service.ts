@@ -30,7 +30,7 @@ export class TicketsService {
   }
 
 
-  async remove(id: string): Promise<void> {
+  async destroy(id: string): Promise<void> {
     await this.tickets.delete(id);
   }
 }

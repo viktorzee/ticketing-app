@@ -20,5 +20,9 @@ export class CreateTicketDto {
 
   @IsNotEmpty()
   @IsDateString()
+  createDate: Date;
+
+  @IsNotEmpty()
+  @IsDateString()
   dueDate: Date;
 }

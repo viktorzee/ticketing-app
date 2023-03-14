@@ -24,6 +24,10 @@ export class UpdateTicketDto {
   status?: string;
 
   @IsOptional()
+  @IsDateString()
+  createDate?: Date;
+  
+  @IsOptional()
   @IsNotEmpty()
   @IsDateString()
   dueDate?: Date;
