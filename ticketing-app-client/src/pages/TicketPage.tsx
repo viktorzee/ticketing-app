@@ -11,14 +11,18 @@ import { Irows, Icolumns } from '../types/table';
 import LoadingSpinner from '../components/LoadingSpinner';
 import TicketsTable from '../components/tables/ticket/TicketsTable';
 import AddTicketModal from '../components/modals/AddTicketModal';
+import { selectAllUsers } from '../state-management/features/userSlice';
 
 
 const TicketPage: React.FC = () => {
 	const dispatch = useAppDispatch();
 	const ticketStatus = useAppSelector(selectTicketStatus);
 	const allTickets:Irows = useAppSelector(selectAllTickets);
+	const allUsers = useAppSelector(selectAllUsers);
 	const [errorMessage, setErrorMessage] = useState('');
 	const [modalIsOpen, setModalOpen] = useState(false);
+
+	console.log(allUsers)
 	
 	let ticketsColumns: Icolumns = [];
 
@@ -111,7 +115,7 @@ const TicketPage: React.FC = () => {
 
 				<div className="grid grid-cols-12 px-6 ">
 					<div className="col-span-12">
-						{allTickets.length === 0 && (
+						{(allTickets.length === 0  && ticketStatus === 'pending' )&& (
 							<p>Please wait while the table is loading...</p>
 						)}
 						{allTickets && allTickets.length > 0 && (
@@ -122,7 +126,23 @@ const TicketPage: React.FC = () => {
 							/>
 						)}
 					</div>
+
+					
 				</div>
+				<div className='h-screen flex justify-center items-start'>
+					{
+							(allTickets.length === 0 &&
+								(ticketStatus === 'idle' || ticketStatus === 'succeeded') 
+							) 
+							&&
+							(
+								<p className="text-center p-5 border-2 rounded-md border-red-300"
+								>
+									No Data...
+								</p>
+							)
+						}
+					</div>
 			</div>
 			{/* }  */}
 
