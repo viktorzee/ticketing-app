@@ -56,4 +56,4 @@ To update a ticket, click its title in the list of tickets on the home page, and
 To delete a ticket, click its title in the list of tickets on the home page, and then click the "Delete" button on the ticket details page. If the ticket is deleted successfully, you will see a success message, and you will be taken back to the home page.
 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This Task is licensed under the MIT License.
