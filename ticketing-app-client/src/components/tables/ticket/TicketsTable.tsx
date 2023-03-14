@@ -162,7 +162,7 @@ export default function TicketsTable({
 	
 
 	return (
-		<>
+		<div className='bg-white p-5 rounded-3xl'>
 			<div className="grid grid-cols-12 justify-between ">
 				<TableUtilities
 					rows={rows}
@@ -174,7 +174,7 @@ export default function TicketsTable({
 				/>
 			</div>
 
-			<div className="border-1 border-gray-200 mt-1 shadow-2xl overflow-x-auto">
+			<div className="border-1 border-gray-200 mt-1 shadow-lg overflow-x-auto">
 				<table className="table-black border-collapse w-full ">
 					<TableHeader
 						headers={headers}
@@ -196,6 +196,6 @@ export default function TicketsTable({
 			<ViewTicketModal  viewModalIsOpen={viewModalIsOpen} setViewModalOpen={setViewModalOpen}  />
 
 			
-		</>
+		</div>
 	);
 }

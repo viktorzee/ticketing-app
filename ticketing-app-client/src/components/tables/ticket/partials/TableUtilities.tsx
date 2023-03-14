@@ -20,7 +20,7 @@ export default function TableUtilities({
 			
 			<div className="flex mb-3">
 				<div className="no-print relative flex  md:mt-0  md:float-right ">
-					<button className="absolute w-2.5 h-2.5 ml-2 mr-2 top-3">
+					<button className="absolute w-2.5 h-2.5 ml-2 mr-2 top-3 bg-white">
 						<FaSearch className="text-gray-600 h-4 w-4  fill-current" />
 					</button>
 					<input
