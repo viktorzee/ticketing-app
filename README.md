@@ -41,11 +41,11 @@ For running the client and server code,
 
 **Create a Ticket**
 
-To create a ticket, click the "Create Ticket" button on the home page. Fill in the required fields (title, description, priority), and click the "Save" button. If the ticket is saved successfully, you will see a success message, and the ticket will be added to the list of tickets on the tickets page.
+To create a ticket, click the "Create Ticket" button on the home page. Fill in the required fields and click the "Save" button. If the ticket is saved successfully, you will see a success message, and the ticket will be added to the list of tickets on the tickets page.
 
 **View a Ticket**
 
-To view a ticket, click its title in the list of tickets on the home page. You will be taken to a page that shows the details of the ticket.
+To view a ticket, click its eye icon 👁️ of the ticket in the tickets page.
 
 **Update a Ticket**
 
